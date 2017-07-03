@@ -47,6 +47,7 @@ var styfn = {};
     bgFit: { enums: [ 'none', 'contain', 'cover' ], multiple: true },
     bgCrossOrigin: { enums: [ 'anonymous', 'use-credentials' ], multiple: true },
     bgClip: { enums: [ 'none', 'node' ] },
+    bgGradient: { number: true, multiple: true, units: '%|px|em|deg|rad', implicitUnits: 'px' },
     color: { color: true },
     bool: { enums: [ 'yes', 'no' ] },
     lineStyle: { enums: [ 'solid', 'dotted', 'dashed' ] },
@@ -214,8 +215,10 @@ var styfn = {};
     { name: 'shape', type: t.nodeShape },
     { name: 'shape-polygon-points', type: t.polygonPointList },
     { name: 'background-color', type: t.color },
+    { name: 'background-color2', type: t.color},
     { name: 'background-opacity', type: t.zeroOneNumber },
     { name: 'background-blacken', type: t.nOneOneNumber },
+    { name: 'background-gradient', type: t.bgGradient },
     { name: 'padding', type: t.sizeMaybePercent },
     { name: 'padding-relative-to', type: t.paddingRelativeTo },
 

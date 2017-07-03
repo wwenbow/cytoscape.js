@@ -3,6 +3,7 @@
 var is = require( '../../../is' );
 
 var CRp = {};
+console.log('init')
 
 CRp.drawNode = function( context, node, shiftToOriginWithBb, drawLabel ){
   var r = this;
@@ -67,10 +68,14 @@ CRp.drawNode = function( context, node, shiftToOriginWithBb, drawLabel ){
   // setup styles
 
   var bgColor = node.pstyle( 'background-color' ).value;
+  var bgColor2 = node.pstyle( 'background-color2' ).value;
+  var bgGradient = node.pstyle( 'background-gradient' ).value;
   var borderColor = node.pstyle( 'border-color' ).value;
   var borderStyle = node.pstyle( 'border-style' ).value;
 
-  this.fillStyle( context, bgColor[0], bgColor[1], bgColor[2], node.pstyle( 'background-opacity' ).value * parentOpacity );
+  this.fillStyle( context,
+    bgColor[0], bgColor[1], bgColor[2], node.pstyle( 'background-opacity' ).value * parentOpacity,
+    bgGradient, bgColor2[0], bgColor2[1], bgColor2[2] );
 
   this.strokeStyle( context, borderColor[0], borderColor[1], borderColor[2], node.pstyle( 'border-opacity' ).value * parentOpacity );
 

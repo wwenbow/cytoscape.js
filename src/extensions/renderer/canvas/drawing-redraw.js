@@ -49,8 +49,16 @@ CRp.paintCache = function( context ){
   return cache;
 };
 
-CRp.fillStyle = function( context, r, g, b, a ){
-  context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+CRp.fillStyle = function( context, r, g, b, a, grad, r2, g2, b2 ){
+  if( grad ) {
+    var gradient = context.createLinearGradient( grad[0], grad[1], grad[2], grad[3] );
+    gradient.addColorStop( 0, 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')' );
+    gradient.addColorStop( 1, 'rgba(' + r2 + ',' + g2 + ',' + b2 + ',' + a + ')' );
+    context.fillStyle = gradient;
+  }
+  else {
+    context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+  }
 
   // turn off for now, seems context does its own caching
 
