@@ -45,7 +45,7 @@ var styfn = {};
     bgRelativeTo: { enums: [ 'inner', 'include-padding' ], multiple: true },
     bgRepeat: { enums: [ 'repeat', 'repeat-x', 'repeat-y', 'no-repeat' ], multiple: true },
     bgFit: { enums: [ 'none', 'contain', 'cover' ], multiple: true },
-    bgCrossOrigin: { enums: [ 'anonymous', 'use-credentials' ], multiple: true },
+    bgCrossOrigin: { enums: [ '', 'anonymous', 'use-credentials' ], multiple: true },
     bgClip: { enums: [ 'none', 'node' ] },
     bgGradient: { number: true, multiple: true, units: '%|px|em|deg|rad', implicitUnits: 'px' },
     color: { color: true },

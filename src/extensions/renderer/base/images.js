@@ -26,7 +26,7 @@ BRp.getCachedImage = function( url, crossOrigin, onLoad ){
     // https://bugs.webkit.org/show_bug.cgi?id=123978
     var dataUriPrefix = 'data:';
     var isDataUri = url.substring( 0, dataUriPrefix.length ).toLowerCase() === dataUriPrefix;
-    if( !isDataUri ){
+    if( !isDataUri && crossOrigin !== '' ){
       image.crossOrigin = crossOrigin; // prevent tainted canvas
     }
 
